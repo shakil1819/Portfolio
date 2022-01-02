@@ -1,0 +1,17 @@
+"Short Description of Idea (<200 Words). Give an intro to your idea. Should give us an idea of its scope and objective."
+
+=>				TITLE : Personal Portfolio
+
+	The website is about my personal Portfolio.it will contain 7 different pages including the 
+
+-Home 
+-Personal message 
+-Blog page
+-Works page
+-Achievement Page
+-About me + Hire me page
+-Additional CV Downloading option
+-Expertise Section
+-->Latest topics [this one will fetch and show the viewer latest blogs / works / photos /Achievements]
+
+The website wil have responsive featuring with some responsive buttons as shown in the demo pdf file
