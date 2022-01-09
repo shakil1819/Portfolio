@@ -28,11 +28,11 @@
 firebase.database().ref('User/'+ id).once('value').then(function(snapshot) {
                 if (snapshot.exists()) {
                      var name_ = snapshot.val().name;
-                     var id_ = snapshot.val().id;
+                     var subject_ = snapshot.val().subject;
                     var mail_ = snapshot.val().email;
                     var message_=snapshot.val().message;
                       document.getElementById("name").value = name_;
-                      document.getElementById("id").value = id_;
+                      document.getElementById("subject").value = subject_;
                       document.getElementById("email").value =  mail_;
                     document.getElementById("message").value =  message;
                 }
@@ -61,7 +61,7 @@ function all_student_view()
 
     firebase.database().ref('User/').once('value').then(function(snapshot) {
         snapshot.forEach(function(child) {
-            var m= child.val().id;
+            var m= child.val().subject;
             var n= child.val().name;
             var o= child.val().email;
             var x=child.val().message;
@@ -81,14 +81,14 @@ function all_student_view()
 function show() {
 
     var name = document.getElementById("name").value;
-    var id= document.getElementById("id").value;
+    var subject= document.getElementById("subject").value;
     var email= document.getElementById("email").value;
     var message= document.getElementById("message").value;
 
 
      firebase.database().ref('User/' + id).set({
             name : name,
-            id : id,
+            subject : subject,
             email : email,
             message : message
           }, function(error) {
@@ -145,7 +145,7 @@ function show() {
                         </ul>
                         <!-- End Mainmanu Nav -->
                     </nav>
-                    <!-- Start Header Right  -->
+<!-- Start Header Right  -->
                     <div class="header-right">
 <div class="hamberger-menu d-block d-xl-none">
               <i id="menuBtn" class="feather-menu humberger-menu"></i>
@@ -199,12 +199,13 @@ function show() {
     <main class="main-page-wrapper">
 
         <!-- Start bread vrumb area -->
+        <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Your Words.....</h1>
         <div class="breadcrumb-area rn-section-gap breadcrumb-style-one">
             <div class="plr--85">
                 <div class="row">
                     <div class="col-lg-12">
                       <div class="breadcrumb-inner">
-          <h1 class="title">&nbsp;</h1>
+          <h2 class="title"></h2>
                             <ul class="page-list">
                               <li></li>
                                 <li class="separator"></li>
@@ -221,12 +222,12 @@ function show() {
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6">
+                                    <!--<div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="phone">ID Number</label>
                                             <input type="" id="id" title="id" placeholder="id:"> <br>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     
     <!--<button onclick="show()">Submit</button>-->
                                     <div class="col-lg-12">
@@ -239,7 +240,7 @@ function show() {
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="subject">subject</label>
-                                            <input class="form-control form-control-sm"  type="" id="subject" title="id" name="subject" placeholder="id:" type="text">
+                                            <input class="form-control form-control-sm"  type="" id="subject" title="id" name="subject" placeholder="id:">
                                             <!--<input  id="id" title="id" placeholder="id:"> <br>-->
                                         </div>
                                     </div>
