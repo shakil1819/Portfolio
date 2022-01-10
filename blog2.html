@@ -1,5 +1,110 @@
 
-<!DOCTYPE html><script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="https://assets.tumblr.com/assets/scripts/pre_tumblelog.js?_v=b9f848c06fcba7eaf305d4a7cb7a1b98"></script><!DOCTYPE html><!-- 
+<!DOCTYPE html>
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+                <script>
+    function search() 
+{
+    var id= document.getElementById("id1").value;
+
+firebase.database().ref('User/'+ id).once('value').then(function(snapshot) {
+                if (snapshot.exists()) {
+                     var name_ = snapshot.val().name;
+                     var subject_ = snapshot.val().subject;
+                    var mail_ = snapshot.val().email;
+                    var message_=snapshot.val().message;
+                      document.getElementById("name").value = name_;
+                      document.getElementById("subject").value = subject_;
+                      document.getElementById("email").value =  mail_;
+                    document.getElementById("message").value =  message;
+                }
+                else
+                {
+
+                }
+        }, function(error) {
+            if (error) {
+
+            } else {
+
+            }
+          });
+}
+
+function delete_()
+{
+    var del_user = document.getElementById("for_del").value;
+    let userRef = firebase.database().ref('User/' + del_user);
+    userRef.remove();
+    alert("Successfully Removed");
+}
+function all_student_view()
+{
+
+    firebase.database().ref('User/').once('value').then(function(snapshot) {
+        snapshot.forEach(function(child) {
+            var m= child.val().subject;
+            var n= child.val().name;
+            var o= child.val().email;
+            var x=child.val().message;
+            alert(m + " "+ n+ " "+ o);
+
+
+        });
+        }, function(error) {
+            if (error) {
+            } else {
+
+            }
+          });
+
+}
+
+function show() {
+
+    var name = document.getElementById("name").value;
+    var subject= document.getElementById("subject").value;
+    var email= document.getElementById("email").value;
+    var message= document.getElementById("message").value;
+
+
+     firebase.database().ref('User/' + id).set({
+            name : name,
+            subject : subject,
+            email : email,
+            message : message
+          }, function(error) {
+            if (error) {
+              // The write failed...
+            } else {
+                alert("DONE");
+              
+           
+            }
+          });
+ } 
+    </script>
+    <!--firebase start-->
+        <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyBLwgiZhZvBzw6h9JSk7sLxmulkfKVaczk",
+    authDomain: "portfolio-5df24.firebaseapp.com",
+    databaseURL: "https://portfolio-5df24-default-rtdb.firebaseio.com",
+    projectId: "portfolio-5df24",
+    storageBucket: "portfolio-5df24.appspot.com",
+    messagingSenderId: "647769308645",
+    appId: "1:647769308645:web:d4fb97cadfe7a6aaeb430c",
+    measurementId: "G-R18M34SQPF"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+
+    </script>
+    
+    <!--firebase end-->
+<script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="https://assets.tumblr.com/assets/scripts/pre_tumblelog.js?_v=b9f848c06fcba7eaf305d4a7cb7a1b98"></script>
+
+<!DOCTYPE html><!-- 
   Theme: PHU7UR3 v.1.1
   Author: adraft  [http://themeforest.net/user/adraft?ref=adraft]
   Date: 30-05-2015
@@ -7,11 +112,22 @@
 --><!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]--><!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]--><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	
-	<title>PHU7UR3 &mdash; Another Glitchy Cyborg Dude
-
- Dancing great...
+	<title>blog &mdash; 
 	</title><meta name="description" content="Another Glitchy Cyborg Dude Dancing great turbulent clouds star stuff harvesting star light take root and flourish. Encyclopaedia galactica, kindling the energy hidden in matter rings of Uranus the..."><style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-iframe--amp-cta-button{visibility:hidden;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--amp-cta-button.tmblr-iframe--loaded{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}</style><link rel="stylesheet" media="screen" href="https://assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css?_v=b84ed2eb31f8e1bbdb3e7a53afa67dd4"><link rel="canonical" href="https://phu7ur3.tumblr.com/post/120025399964/another-glitchy-cyborg-dude-dancing-great"><link rel="shortlink" href="https://tmblr.co/ZIZtPk1lo4aAS"><!-- Favicons --><link rel="shortcut icon" href="https://64.media.tumblr.com/avatar_fe2e79f79638_128.pnj"><link rel="apple-touch-icon" href="https://64.media.tumblr.com/avatar_fe2e79f79638_128.pnj"><!-- RSS --><link rel="alternate" type="application/rss+xml" href="https://phu7ur3.tumblr.com/rss"><!-- Styles --><link rel="stylesheet" href="https://static.tumblr.com/ajtokgb/EyKnonl2i/normalize.css"><!-- Normalize CSS --><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Exo:300,400,500,600,700,800,900,300italic,400italic,500italic,600italic,700italic,800italic,900italic&subset=latin,latin-ext"><!-- Exo Font -->	
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic&subset=latin,latin-ext"><!-- Lato Font --><!-- Custom Styles --><style>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic&subset=latin,latin-ext">
+    <!--modified cmnt sec on 10-1-2021-->
+    <!-- CSS 
+    ============================================ -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/vendor/aos.css">
+    <link rel="stylesheet" href="assets/css/plugins/feature.css">
+    <!-- Style css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--modified cmnt sec on 10-1-2021-->
+    <!-- Lato Font --><!-- Custom Styles --><style>
+    
 	/* ---------------------------------------- 
 		Site Styles
 	---------------------------------------- */
@@ -2515,7 +2631,7 @@ You may purchase this template on <a href="http://themeforest.net/item/phu7ur3-r
 					</ul><!-- .widgets --></div><!-- .main_menu_inner --></section><!-- .main_menu --><div class="content_inner"><!-- Logo Text --><div class="logo"><h1><a href="/">Network Sniffing with Wireshark&nbsp;</a></h1></div><!-- Main Content --><div class="main_content"><!-- Main Content Inner --><div class="main_content_inner"><!-- ======================================
 							Posts - Permalink Page
 						======================================= --><article class="perm_tumblr_post perm_photo_post"><!-- Photo Post --><div class="photo_img"><div style='position:relative; padding-bottom:calc(56.22% + 44px)'><iframe src='https://gfycat.com/ifr/SandyUnacceptableAfricanparadiseflycatcher' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
-					            <span class="button-group text-center"><a class="rn-btn border-button btn-small" href="#">Button Small</a></span></div><p> <a href="https://gfycat.com/sandyunacceptableafricanparadiseflycatcher">&nbsp;</a></p>
+					            <span class="button-group text-center"></span></div><p> <a href="https://gfycat.com/sandyunacceptableafricanparadiseflycatcher">&nbsp;</a></p>
 		              <strong>&nbsp;</strong></div><div class="perm_padding post_caption"><h2>
 
 1.1. What is Wireshark? </h2>
@@ -2655,33 +2771,50 @@ You may purchase this template on <a href="http://themeforest.net/item/phu7ur3-r
 
 </style>
 <div class="container">
-<div class="be-comment-block">
-	<h1 class="comments-title">Comment Section</h1>
-<form class="form-block">
-  <div class="row">
-			<div class="col-xs-12 col-sm-6">
-				<div class="form-group fl_icon">
-					<div class="icon"><i class="fa fa-user"></i></div>
-					<input class="form-input" type="text" placeholder="Your name">
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-6 fl_icon">
-				<div class="form-group fl_icon">
-					<div class="icon"><i class="fa fa-envelope-o"></i></div>
-					<input class="form-input" type="text" placeholder="Your email">
-				</div>
-			</div>
-			<div class="col-xs-12">									
-				<div class="form-group">
-					<textarea class="form-input" required="" placeholder="Your text"></textarea>
-				</div>
-			</div>
-			<input type="submit" value="Submit">
+		<!--modified cmnt sec on 10-1-2021-->
+                <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="name">Your Name</label>
+                                            <input type="" id="name" placeholder="Name:" name="name"> <br>
+                  </div>
+              </div>
+
+                                    <!--<div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="phone">ID Number</label>
+                                            <input type="" id="id" title="id" placeholder="id:"> <br>
+                                        </div>
+                                    </div>-->
+                                    
+    <!--<button onclick="show()">Submit</button>-->
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                           <input type="" id="email" title="email" placeholder="email:"> <br>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="subject">subject</label>
+                                            <input class="form-control form-control-sm"  type="" id="subject" title="id" name="subject" placeholder="id:">
+                                            <!--<input  id="id" title="id" placeholder="id:"> <br>-->
+                                        </div>
+                                    </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                                            <label for="message">Your Message</label>
+											<textarea name="Message" input type="" id="message" title="Message" placeholder="Message:"  cols="30" rows="10"> <br>
+                                            </textarea>
+                </div>
+              
+              </div>
+			<!--<input class="btn btn-primary"  type="submit" value="Submit">-->
+                <input class="btn btn-primary" onclick="show()" type="submit" value="Submit">
 		</div>
-	</form>
-</div>
-</div>
-			<!--comment sectio end-->
+                <!--modified cmnt sec on 10-1-2021-->
+              
 								
 								
 								
