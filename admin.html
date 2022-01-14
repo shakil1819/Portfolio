@@ -19,6 +19,9 @@
     appId: "1:647769308645:web:d4fb97cadfe7a6aaeb430c",
     measurementId: "G-R18M34SQPF"
   };
+		/*
+		Just paste your own configuration from firebase cdn here 
+		*/
 
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
@@ -26,14 +29,14 @@
     <script>
          
   var database = firebase.database();
-    database.ref('User').on('value', function(snapshot){
+    database.ref('User').on('value', function(snapshot){ // database.ref('place your firebase mother id here. ') 
         if(snapshot.exists()){
             var content = '';
             snapshot.forEach(function(data){
                 var val = data.val();
                 content +='<tr>';       
                 content += '<td>' + val.name + '</td>';
-                content += '<td>' + val.email + '</td>';
+                content += '<td>' + val.email + '</td>';//change your own variables according to firebase realtime database
                 content += '<td>' + val.id + '</td>';
                 content += '<td>' + val.message + '</td>';
                 //content += '<td>' + val.q5 + '</td>';
@@ -60,7 +63,7 @@
     			<tr>
     		<th>Name</th>
             <th>Email</th>
-            <th>Phone No.</th>
+            <th>Phone No.</th><!--change according to your need-->
             <th>Message</th>
             <!--<th>Q5</th>
             <th>Q6</th>
