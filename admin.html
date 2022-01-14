@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Firebase Sample Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+	 const firebaseConfig = {
+    apiKey: "AIzaSyBLwgiZhZvBzw6h9JSk7sLxmulkfKVaczk",
+    authDomain: "portfolio-5df24.firebaseapp.com",
+    databaseURL: "https://portfolio-5df24-default-rtdb.firebaseio.com",
+    projectId: "portfolio-5df24",
+    storageBucket: "portfolio-5df24.appspot.com",
+    messagingSenderId: "647769308645",
+    appId: "1:647769308645:web:d4fb97cadfe7a6aaeb430c",
+    measurementId: "G-R18M34SQPF"
+  };
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+	  </script>
+    <script>
+         
+  var database = firebase.database();
+    database.ref('User').on('value', function(snapshot){
+        if(snapshot.exists()){
+            var content = '';
+            snapshot.forEach(function(data){
+                var val = data.val();
+                content +='<tr>';       
+                content += '<td>' + val.name + '</td>';
+                content += '<td>' + val.email + '</td>';
+                content += '<td>' + val.id + '</td>';
+                content += '<td>' + val.message + '</td>';
+                //content += '<td>' + val.q5 + '</td>';
+                //content += '<td>' + val.q6 + '</td>';
+                //content += '<td>' + val.q7 + '</td>';
+                //content += '<td>' + val.q8 + '</td>';
+                //content += '<td>' + val.q9 + '</td>';
+                //content += '<td>' + val.contact + '</td>';
+                //content += '<td>' + val.comment + '</td>';
+                content += '</tr>';
+            });
+            $('#table1').append(content);
+        }
+    });
+  </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1></h1>
+      <p>Database Results:</p>
+      <table class="table table-striped" id="table1">
+    		<thead>
+    			<tr>
+    		<th>Name</th>
+            <th>Email</th>
+            <th>Phone No.</th>
+            <th>Message</th>
+            <!--<th>Q5</th>
+            <th>Q6</th>
+            <th>Q7</th>
+            <th>Q8</th>
+            <th>Q9</th>
+            <th>Contact</th>
+            <th>Comment</th>-->
+    				
+    			</tr>
+    		</thead>
+    		<tbody>
+    	
+    	</table>
+    </div>
+    
+  </body>
+</html>
