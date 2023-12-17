@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 
 <html lang="en">
@@ -6,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keyword" content="animations,animated,style,look">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Shakil 1819</title>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,3 +43,54 @@
 	
 </body>
 </html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Shakil 1819</title>
+    
+    <style>
+        /* Add your inline CSS for responsiveness */
+        .type-it {
+            color: #00ff00;
+            font-size: 18px;
+            /* Other styles */
+        }
+
+        /* Example media query for mobile devices */
+        @media (max-width: 767px) {
+            .type-it {
+                font-size: 14px;
+                /* Other styles for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <span class="type-it"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/type-it.js"></script>
+
+    <script>
+        var first = "Hello,";
+        var second = "I'm <strong>Shakil Mosharrof</strong>.";
+        var third = "Get to know <a href='home-content-writer.html'>me</a>.";
+        var fourth = "<a href='home-content-writer.html'>Portfolio</a> • <a href='https://github.com/shakil1819'>GitHub</a> • <a href='https://www.linkedin.com/in/shakil-mosharrof-6a3739178/'>LinkedIn</a> • <a href='mailto:shakilmrf8@gmail.com'>Email</a>";
+        $('.type-it').typeIt({
+            strings: [first, second, third, fourth]
+        });
+    </script>
+</body>
+</html>
+
