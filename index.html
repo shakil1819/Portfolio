@@ -323,7 +323,7 @@ function show() {
 	<a href="https://t.me/shakil_1819"><img src="https://img.shields.io/badge/telegram-4A4A55?style=for-the-badge&logo=telegram&logoColor=black" /></a>
 	<a href="https://www.kaggle.com/shakil19"><img src="https://img.shields.io/badge/Kaggle-FA5C5C?style=for-the-badge&logo=Kaggle&logoColor=black" /></a>
 	<a href="https://twitter.com/_shakil_19"><img src="https://img.shields.io/badge/Twitter-43853D?style=for-the-badge&logo=Twitter&logoColor=black" /></a>
-
+    <a href="https://shakil-mosharrof-xcadet-bcc.netlify.app/#contacts"><img src="https://img.shields.io/badge/Send Me a Message-FFDD00?style=for-the-badge&logo=gmail&logoColor=black" /></a>
 
 	
     
@@ -1703,6 +1703,20 @@ Bangladesh.</p>
     <script src="assets/js/main.js"></script>
     <!-- Step 2: Add the script -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script>
+        const form = document.getElementById('contacts');
+        
+        form.addEventListener('submit', function(e) {
+        
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+        
+            if (!hCaptcha) {
+                e.preventDefault();
+                alert("Please fill out captcha field")
+                return
+            }
+        });
+        </script>
 </body>
 
 </html>
